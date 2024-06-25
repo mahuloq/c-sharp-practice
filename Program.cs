@@ -1,40 +1,66 @@
-﻿// Your solution must include either a do-while or while iteration.
-
-// Before the iteration block: your solution must use a Console.WriteLine() statement to prompt the user for an integer value between 5 and 10.
-
-// Inside the iteration block:
-
-// Your solution must use a Console.ReadLine() statement to obtain input from the user.
-// Your solution must ensure that the input is a valid representation of an integer.
-// If the integer value isn't between 5 and 10, your code must use a Console.WriteLine() statement to prompt the user for an integer value between 5 and 10.
-// Your solution must ensure that the integer value is between 5 and 10 before exiting the iteration.
-
-string? readResult;
-string adjustedResult;
-bool validRole = false;
-string[] roles = { "Administrator, Manager, User" };
-
-Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
-
-do
+﻿string[] myStrings = new string[]
 {
-    readResult = Console.ReadLine();
+    "I like pizza. I like roast chicken. I like salad",
+    "I like all three of the menu choices"
+};
 
-    if (readResult != null)
+string myString = "";
+int periodLocation = 0;
+
+for (int i = 0; i < myStrings.Length; i++)
+{
+    myString = myStrings[i];
+    periodLocation = myString.IndexOf(".");
+    string mySentence;
+
+    // extract sentences from each string and display them one at a time
+    while (periodLocation != -1)
     {
-        adjustedResult = readResult.Trim().ToLower();
+        // first sentence is the string value to the left of the period location
+        mySentence = myString.Remove(periodLocation);
 
-        if (readResult == roles[0] || readResult == roles[1] || readResult == roles[2])
-        {
-            validRole = true;
-        }
-        else
-        {
-            Console.WriteLine(
-                @"The role name that you entered, ""Admin"" is not valid. Enter your role name (Administrator, Manager, or User) ""Administrator"" "
-            );
-        }
+        // the remainder of myString is the string value to the right of the location
+        myString = myString.Substring(periodLocation + 1);
+
+        // remove any leading white-space from myString
+        myString = myString.TrimStart();
+
+        // update the comma location and increment the counter
+        periodLocation = myString.IndexOf(".");
+
+        Console.WriteLine(mySentence);
     }
-} while (!validRole);
 
-Console.WriteLine($"Number {readResult} accepted.");
+    mySentence = myString.Trim();
+    Console.WriteLine(mySentence);
+}
+
+// string? readResult;
+// string adjustedResult;
+// bool validRole = false;
+// string[] roles = { "Administrator, Manager, User" };
+
+// Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
+
+// do
+// {
+//     readResult = Console.ReadLine();
+
+//     if (readResult != null)
+//     {
+//         adjustedResult = readResult.Trim().ToLower();
+
+//         if (readResult == roles[0] || readResult == roles[1] || readResult == roles[2])
+//         {
+//             validRole = true;
+//         }
+//         else
+//         {
+//             Console.WriteLine(
+//                 @"The role name that you entered, ""Admin"" is not valid. Enter your role name (Administrator, Manager, or User) ""Administrator"" "
+//             );
+//         }
+//     }
+// } while (!validRole);
+
+// Console.WriteLine($"Number {readResult} accepted.");

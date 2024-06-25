@@ -12,3 +12,4 @@
 /home/mahuloq/projects/c#/TestProject/obj/Debug/net8.0/TestProject.pdb
 /home/mahuloq/projects/c#/TestProject/obj/Debug/net8.0/TestProject.genruntimeconfig.cache
 /home/mahuloq/projects/c#/TestProject/obj/Debug/net8.0/ref/TestProject.dll
+/home/mahuloq/projects/c#/TestProject/obj/Debug/net8.0/TestProject.sourcelink.json
