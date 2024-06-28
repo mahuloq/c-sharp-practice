@@ -1,39 +1,54 @@
-﻿string[] myStrings = new string[]
-{
-    "I like pizza. I like roast chicken. I like salad",
-    "I like all three of the menu choices"
-};
+﻿Console.WriteLine("Signed integral types:");
 
-string myString = "";
-int periodLocation = 0;
+Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
+Console.WriteLine($"short  : {short.MinValue} to {short.MaxValue}");
+Console.WriteLine($"int    : {int.MinValue} to {int.MaxValue}");
+Console.WriteLine($"long   : {long.MinValue} to {long.MaxValue}");
 
-for (int i = 0; i < myStrings.Length; i++)
-{
-    myString = myStrings[i];
-    periodLocation = myString.IndexOf(".");
-    string mySentence;
+Console.WriteLine("");
+Console.WriteLine("Unsigned integral types:");
 
-    // extract sentences from each string and display them one at a time
-    while (periodLocation != -1)
-    {
-        // first sentence is the string value to the left of the period location
-        mySentence = myString.Remove(periodLocation);
+Console.WriteLine($"byte   : {byte.MinValue} to {byte.MaxValue}");
+Console.WriteLine($"ushort : {ushort.MinValue} to {ushort.MaxValue}");
+Console.WriteLine($"uint   : {uint.MinValue} to {uint.MaxValue}");
+Console.WriteLine($"ulong  : {ulong.MinValue} to {ulong.MaxValue}");
 
-        // the remainder of myString is the string value to the right of the location
-        myString = myString.Substring(periodLocation + 1);
+// string[] myStrings = new string[]
+// {
+//     "I like pizza. I like roast chicken. I like salad",
+//     "I like all three of the menu choices"
+// };
 
-        // remove any leading white-space from myString
-        myString = myString.TrimStart();
+// string myString = "";
+// int periodLocation = 0;
 
-        // update the comma location and increment the counter
-        periodLocation = myString.IndexOf(".");
+// for (int i = 0; i < myStrings.Length; i++)
+// {
+//     myString = myStrings[i];
+//     periodLocation = myString.IndexOf(".");
+//     string mySentence;
 
-        Console.WriteLine(mySentence);
-    }
+//     // extract sentences from each string and display them one at a time
+//     while (periodLocation != -1)
+//     {
+//         // first sentence is the string value to the left of the period location
+//         mySentence = myString.Remove(periodLocation);
 
-    mySentence = myString.Trim();
-    Console.WriteLine(mySentence);
-}
+//         // the remainder of myString is the string value to the right of the location
+//         myString = myString.Substring(periodLocation + 1);
+
+//         // remove any leading white-space from myString
+//         myString = myString.TrimStart();
+
+//         // update the comma location and increment the counter
+//         periodLocation = myString.IndexOf(".");
+
+//         Console.WriteLine(mySentence);
+//     }
+
+//     mySentence = myString.Trim();
+//     Console.WriteLine(mySentence);
+//}
 
 // string? readResult;
 // string adjustedResult;
